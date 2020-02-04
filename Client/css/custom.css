@@ -26,12 +26,8 @@
 .human-features-form {
   margin-right: 21%;
 }
-.human-removed{
-  display: none;
-}
 
-#featureSubmitBtn{
-  margin-left: auto;
-  margin-right: auto;
-  float: none;
+/* Common css */
+.human-removed {
+  display: none;
 }
