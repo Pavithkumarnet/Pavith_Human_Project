@@ -13,10 +13,22 @@ async function onfeatureload() {
   var response = await fetch("http://localhost:3000/features");
   var result = await response.json();
 
-  var feature1 = result[0]; // accesses tbe third element in the array
+  var featureList = document.getElementById("feature-list")
 
-  document.getElementById("feature1").innerHTML =
-    feature1.body + "<span class='badge badge-success'>" + feature1.author + ", " + feature1.time + "</span>";
+  for (var i = 0; i < result.length; i++){
+    var lielement = document.createElement("li");
+    lielement.className = "list-group-item";
+    lielement.innerHTML =
+    result[i].body + "<span class='badge badge-success'>" + result[i].author + "," + result[i].time + "</span>";
+    featureList.appendChild(lielement);
+  }
+
+}
+onfeatureload();
+
+function onfeaturesubmit(){
+  // Send a request to the server
+  console.log("Sending POST request to the server...");
 }
 
-onfeatureload();
+
